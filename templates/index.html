@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mark Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            
+        }
+        h1 {color:crimson;}
+        img {
+            margin-bottom: 20px;
+        }
+       .btn_large{
+            display: inline-block;
+            width: 200px;
+            text-transform: uppercase;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #049876;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.4s ease 0s;
+            cursor: pointer;
+        }
+        .btn_large:hover{
+            background-color: #ea740c;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="img1">
+        <img src="static/Images/college_banner2.png" alt="this is an image" style="width: 100%;">
+    </div>
+
+    <div class="login">
+        <center>
+            <form action="{{url_for('predict')}}" , method="post">
+                <h1>*** Enter your study hours to predict the marks***</h1>
+                <input align="center" type="number" name="study_hours" placeholder="Enter study hours" required>
+
+                <br>
+                <br>
+                <!-- show buttons -->
+                <div class="btn_large">
+                    <button type="submit" class="btn" > <strong>Predict Marks</strong></button>
+                </div>
+            </form>
+        </center>
+        <!-- display prediction -->
+         <div>
+            <center>
+                <h2> {{prediction_text}}</h2>
+            </center>
+         </div>
+    </div>
+</body>
+</html>
